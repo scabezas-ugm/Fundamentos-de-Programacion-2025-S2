@@ -22,6 +22,7 @@ public class NotasApp { // La clase del archivo, debe ser el mismo nombre
         // el espacio en memoria para poder ser utilizada.
         // - System.in: argumento o parámetro para construir el Objeto
 
+        System.out.println("Para 1 estudiante");
         System.out.print("Ingrese Nota1: "); // Mostrar mensajes
         // al usuario por la consola / terminal
         n1 = leer.nextFloat(); // asignar en la variable n1 el valor leido,
