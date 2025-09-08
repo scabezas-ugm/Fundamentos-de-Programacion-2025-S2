@@ -8,7 +8,9 @@ import java.util.Scanner;
 public class CompraDescuentoApp {
     public static void main(String[] args) {
         int montoCompra;
-        float descuento = (float) 0.15, totalApagar;
+        // float descuento = (float) 0.15, totalApagar;
+        float descuento = 15/100, totalApagar;
+        //double descuento = 0.15, totalApagar;
         Scanner leer = new Scanner(System.in); // Create a Scanner object
         System.out.println("=== COMPRA DESCUENTO ===");
         System.out.println("Ingrese el monto de la compra, para saber si aplica no el descuento: ");
