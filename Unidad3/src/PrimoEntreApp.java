@@ -19,5 +19,8 @@ public class PrimoEntreApp {
         }
         System.out.println("Los numeros primos entre " + inicio + " y " + fin + " son:");
         System.out.println(listaPrimos);
+        System.out.println("==============");
+        System.out.println("Los numeros primos entre " + inicio + " y " + fin + " son:");
+        System.out.println(bf.getPrimosEntre(inicio, fin));
     }
 }

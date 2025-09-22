@@ -38,4 +38,14 @@ public class BibliotecaFundamentos {
         }
         return false;
     }
+
+    public List<Integer> getPrimosEntre(int inicio, int fin){
+        List<Integer> listaPrimos = new ArrayList<Integer>();
+        for(int i = inicio; i <= fin; i++){
+            if(isPrimo(i)){
+                listaPrimos.add(i);
+            }
+        }
+        return listaPrimos;
+    }
 }
