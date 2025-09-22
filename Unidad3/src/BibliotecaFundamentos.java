@@ -17,15 +17,25 @@ public class BibliotecaFundamentos {
                 listaDivisores.add(div);
             }
         }
-        listaDivisores.add(numero);
+        if (numero != 1) {
+            listaDivisores.add(numero);
+        }
         return listaDivisores;
     }
 
-    public boolean isPar(int numero){
+    public boolean isPar(int numero) {
         /*
          * int num = 25;
          * System.out.println("El numero " + num + " es par? " + isPar(num));
          */
         return numero % 2 == 0;
+    }
+
+    public boolean isPrimo(int numero) {
+        List<Integer> listaDivisores = getDivisoresV2(numero);
+        if (listaDivisores.size() == 2) {
+            return true;
+        }
+        return false;
     }
 }
