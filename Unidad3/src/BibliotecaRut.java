@@ -25,6 +25,38 @@ public class BibliotecaRut {
         }
         return respuesta;
     }
+    // Paso 3: 
+    // Multiplicar Cada Número por la Serie 2, 3, 4, 5, 6, 7 Repetidamente
+    // Ejemplo: Entrada: 9 0 4 2 6 9 7 2
+    // Ejemplo: 9x2 + 0x3 + 4x4 + 2x5 + 6x6 9x7 7x2 2x3
+    // 18 + 0 + 16 + 10 + 36 + 63 + 14 + 6
+    // 163
+    public int paso3(String rut) {
+        int respuesta = 0;
+        // System.out.println("En Paso 3:");
+        int secuencia[] = {2, 3, 4, 5, 6, 7};
+        // recorremos el string del rut y multiplicamos la secuencia
+        int j=0;
+        for (int i = 0; i < rut.length(); i++) {
+            int suma = Character.getNumericValue(rut.charAt(i)) * secuencia[j];
+            // System.out.println(rut.charAt(i)+"x"+secuencia[j] + "=" + suma);
+            j++;
+            if (j == secuencia.length){
+                j = 0;
+            }
+            respuesta += suma;
+        }
+        // idea loca: digito x multiplicador manualmente
+        //System.out.println(rut.charAt(0)+"x" + 2 + "=" + Character.getNumericValue(rut.charAt(0)) * 2);
+        //System.out.println(rut.charAt(1)+"x" + 3 + "=" + Character.getNumericValue(rut.charAt(1)) * 3);
+        //System.out.println(rut.charAt(2)+"x" + 4 + "=" + Character.getNumericValue(rut.charAt(2)) * 4);
+        //System.out.println(rut.charAt(3)+"x" + 5 + "=" + Character.getNumericValue(rut.charAt(3)) * 5);
+        //System.out.println(rut.charAt(4)+"x" + 6 + "=" + Character.getNumericValue(rut.charAt(4)) * 6);
+        //System.out.println(rut.charAt(5)+"x" + 7 + "=" + Character.getNumericValue(rut.charAt(5)) * 7);
+        //System.out.println(rut.charAt(6)+"x" + 2 + "=" + Character.getNumericValue(rut.charAt(6)) * 2);
+        //System.out.println(rut.charAt(7)+"x" + 3 + "=" + Character.getNumericValue(rut.charAt(7)) * 3);
+        return respuesta;
+    }
 
     public boolean paso2_5(String rut){
         // Verificará si es solo números.
@@ -53,7 +85,8 @@ public class BibliotecaRut {
             System.out.println("Respuesta Paso 2: " + paso_2);
             System.out.println("Respuesta Paso 2.5: " + paso2_5(paso_2));
             if (paso2_5(paso_2)){
-                
+                int paso_3 = paso3(paso_2);
+                System.out.println("Respuesta Paso 3: " + paso_3);
                 return true;
             }
             return false;
