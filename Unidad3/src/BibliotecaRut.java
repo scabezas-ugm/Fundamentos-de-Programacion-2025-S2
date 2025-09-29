@@ -26,6 +26,16 @@ public class BibliotecaRut {
         return respuesta;
     }
 
+    public boolean paso2_5(String rut){
+        // Verificará si es solo números.
+        for (int i = 0; i < rut.length(); i++) {
+            if (!Character.isDigit(rut.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     // Funcion Final
     public boolean validar(String rut) {
         // System.out.println("El rut que llega a validar: " + rut);
@@ -41,7 +51,12 @@ public class BibliotecaRut {
             System.out.println("Respuesta Paso 1: " + paso_1);
             String paso_2 = paso2(paso_1);
             System.out.println("Respuesta Paso 2: " + paso_2);
-            return true;
+            System.out.println("Respuesta Paso 2.5: " + paso2_5(paso_2));
+            if (paso2_5(paso_2)){
+                
+                return true;
+            }
+            return false;
         } else {
             return false;
         }
