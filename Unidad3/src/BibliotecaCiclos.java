@@ -90,40 +90,104 @@ public class BibliotecaCiclos {
 
     public void dibujarRelojVertical(int lado) {
         System.out.println("== RELOJ VERTICAL ==");
-        int restar=0;
-        boolean incrementa=false, decrementa=false;
+        int restar = 0;
+        boolean incrementa = false, decrementa = false;
         for (int fila = 0; fila < lado; fila++) {
             for (int columna = 0; columna < lado; columna++) {
                 // System.out.print("Fila ["+fila+"]: " + fila/2 + "Columna ["+columna+"]: " +
                 // columna/2);
-                //System.out.print("[" + fila + "-" + columna + "]");
-                if (restar<=columna && columna <= (lado-1-restar)){
-                    System.out.print("X ");
-                }else{
-                    System.out.print("_ ");
-                }
-                
-                if (fila <= columna){
-                    incrementa=true;
-                    decrementa=false;
-                }else{
-                    incrementa=false;
-                    decrementa=true;
-                }
-
-                /*if ((fila == (lado-1)/2 && columna == (lado-1)/2) || (fila ==0) ) {
+                // System.out.print("[" + fila + "-" + columna + "]");
+                if (restar <= columna && columna <= (lado - 1 - restar)) {
                     System.out.print("X ");
                 } else {
                     System.out.print("_ ");
-                }*/
+                }
+
+                if (fila <= columna) {
+                    incrementa = true;
+                    decrementa = false;
+                } else {
+                    incrementa = false;
+                    decrementa = true;
+                }
+
+                /*
+                 * if ((fila == (lado-1)/2 && columna == (lado-1)/2) || (fila ==0) ) {
+                 * System.out.print("X ");
+                 * } else {
+                 * System.out.print("_ ");
+                 * }
+                 */
             }
-            if(incrementa){
+            if (incrementa) {
                 restar++;
             }
-            if (decrementa){
+            if (decrementa) {
                 restar--;
             }
             System.out.println("");
+        }
+        System.out.println("");
+    }
+
+    public void dibujarRelojVerticalV2(int lado) {
+        System.out.println("== RELOJ VERTICAL VERSION 2 ==");
+        int espacios = 0;
+        for (int fila = 0; fila < lado; fila++) {
+            for (int columna = 0; columna < lado; columna++) {
+                if (espacios <= columna && columna <= (lado - 1 - espacios)) {
+                    System.out.print("X ");
+                } else {
+                    System.out.print("_ ");
+                }
+            }
+            System.out.println(" [espacios: " + espacios + "]");
+            if (fila < lado / 2) {
+                // System.out.println("Incrementa");
+                espacios++;
+            } else {
+                // System.out.println("Decrementa");
+                espacios--;
+            }
+        }
+        System.out.println("");
+    }
+
+    public void dibujarRelojHorizontal(int lado) {
+        System.out.println("== RELOJ HORIZONTAL ==");
+        int espacios = 0;
+        for (int fila = 0; fila < lado; fila++) {
+            for (int columna = 0; columna < lado; columna++) {
+                if (columna <= fila || (fila + columna) == lado - 1) {
+                    System.out.print("X ");
+                } else {
+                    System.out.print("_ ");
+                }
+            }
+            System.out.println(" [espacios: " + espacios + "]");
+        }
+        System.out.println("");
+    }
+
+    public void dibujarRelojHorizontalV2(int lado) {
+        System.out.println("== RELOJ HORIZONTAL ==");
+        int espacios = 0;
+        for (int fila = 0; fila < lado; fila++) {
+            for (int columna = 0; columna < lado; columna++) {
+                if (espacios <= columna - 1 && columna <= (lado - 2 - espacios)) {
+                    System.out.print("_ ");
+                } else {
+                    System.out.print("X ");
+                }
+            }
+            System.out.println(" [espacios: " + espacios + "]");
+            if (fila < lado / 2) {
+                // System.out.println("Incrementa");
+                espacios++;
+            } else {
+                // System.out.println("Decrementa");
+                espacios--;
+            }
         }
         System.out.println("");
     }
@@ -140,7 +204,9 @@ public class BibliotecaCiclos {
             // bc.dibujarDiagonalPrincipal(numero);
             // bc.dibujarDiagonalSecundaria(numero);
             // bc.dibujarEscalonadaPrincipal(numero);
-            bc.dibujarRelojVertical(numero);
+            // bc.dibujarRelojVerticalV2(numero);
+            // bc.dibujarRelojHorizontal(numero);
+            bc.dibujarRelojHorizontalV2(numero);
             System.out.print("¿Desea continuar ingrese 1? / para salir ingrese 0 | Ingrese opción: ");
             int salir = leer.nextInt();
             if (salir == 0) {
