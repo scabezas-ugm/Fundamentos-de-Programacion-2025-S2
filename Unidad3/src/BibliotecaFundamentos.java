@@ -39,13 +39,27 @@ public class BibliotecaFundamentos {
         return false;
     }
 
-    public List<Integer> getPrimosEntre(int inicio, int fin){
+    public List<Integer> getPrimosEntre(int inicio, int fin) {
         List<Integer> listaPrimos = new ArrayList<Integer>();
-        for(int i = inicio; i <= fin; i++){
-            if(isPrimo(i)){
+        for (int i = inicio; i <= fin; i++) {
+            if (isPrimo(i)) {
                 listaPrimos.add(i);
             }
         }
         return listaPrimos;
     }
+
+    public int getMinimoLista(int[] lista) {
+        int minimo = lista[0]; // toma el primer valor de la lista
+        for (int i = 1; i < lista.length; i++) {
+            // System.out.println(lista[i] + " < Minimo: " + minimo + "?");
+            if(lista[i] < minimo){
+                minimo = lista[i];
+            }
+            // System.out.println("Valor: " + lista[i]);
+        }
+        return minimo;
+    }
+    
+    
 }
