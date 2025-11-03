@@ -1,3 +1,5 @@
+import java.util.Random;
+
 class Matrices {
     public static void main(String[] args) {
         System.out.println("Matrices en Java");
@@ -24,6 +26,13 @@ class Matrices {
         mostrarMatriz(matrizCuadrada2);
         mostrarMatriz(matrizCuadrada3);
         mostrarMatriz(matrizCuadrada3, "X", "_");
+        mostrarMatriz(matrizCuadrada3, "😃", "🙈");
+        poblarMatrizRandom(matrizCuadrada3);
+        mostrarMatriz(matrizCuadrada3, "😃"," ");
+        sobreEscribirDiagonalPrincipal(matrizCuadrada3);
+        mostrarMatriz(matrizCuadrada3, "X","_");
+        sobreEscribirDiagonalSecundaria(matrizCuadrada3);
+        mostrarMatriz(matrizCuadrada3, "X","_");
     }
 
     public static void mostrarMatriz(String[][] matriz) {
@@ -57,6 +66,43 @@ class Matrices {
                 }
             }
             System.out.println();
+        }
+    }
+
+    public static void poblarMatrizRandom(boolean [][] matriz){
+        // instancia del objeto random
+        Random aleatorio = new Random();
+        // System.out.println("Poblado de Matriz");
+        for (int f = 0; f < matriz.length; f++) {
+            for (int c = 0; c < matriz[0].length; c++) {
+                matriz[f][c] = aleatorio.nextBoolean();
+            }
+        }
+    }
+
+    public static void sobreEscribirDiagonalPrincipal(boolean [][]matriz) {
+        System.out.println("== DIAGONAL PRINCIPAL ==");
+        for (int f = 0; f < matriz.length; f++) {
+            for (int c = 0; c < matriz[f].length; c++) {
+                if (f == c) {
+                    matriz[f][c] = true;
+                } else {
+                    matriz[f][c] = false;
+                }
+            }
+        }
+    }
+    
+    public static void sobreEscribirDiagonalSecundaria(boolean [][] matriz) {
+        System.out.println("== DIAGONAL SECUNDARIA ==");
+        for (int f = 0; f < matriz.length; f++) {
+            for (int c = 0; c < matriz[f].length; c++) {
+                if (f + c == matriz.length - 1) {
+                    matriz[f][c] = true;
+                } else {
+                    matriz[f][c] = false;
+                }
+            }
         }
     }
 }
