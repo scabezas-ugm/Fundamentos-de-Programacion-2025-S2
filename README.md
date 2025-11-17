@@ -103,7 +103,7 @@ El juego debe cumplir con las siguientes reglas:
 
 ### 8. Entregables
 
-* Comprimir la carpeta completa del proyecto de **NetBeans** en un archivo `.zip`.
+* Comprimir la carpeta completa del proyecto en un archivo `.zip`.
 * Subir el archivo `.zip` a la plataforma Blackboard antes de la fecha y hora límite.
 
 # Fundamentos de Programación
