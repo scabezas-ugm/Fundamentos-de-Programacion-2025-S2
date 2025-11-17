@@ -16,6 +16,9 @@
 **Objetivo General:**
 Desarrollar una aplicación de consola en Java que simule una versión simplificada del juego "Batalla Naval" (Hundir la Flota) para dos jugadores.
 
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbu0dKYLoYCyQpjGDC1Ch2V3HORjxke0F2bg&s)
+
+
 **Objetivos de Aprendizaje:**
 El estudiante deberá demostrar competencia en:
 * La **creación y manipulación de arreglos bidimensionales** (matrices) para representar los tableros de juego.
